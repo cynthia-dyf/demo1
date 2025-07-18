@@ -1,1 +1,6 @@
 This is demo1
+
+strength: advanced technology , teamwork
+weakness: can not communicatie in english, unfamiliar with the bussiness
+opportunities: work with colleagues around the world , learn a lot about finance knowledge
+threat: data security 
