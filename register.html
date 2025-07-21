@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Form</title>
+    <script>
+        
+document.addEventListener('DOMContentLoaded', () => {
+            const passwordField = document.getElementById('password');
+            const confirmPasswordField = document.getElementById('confirm_password');
+
+            passwordField.addEventListener('blur', () => {
+                if (passwordField.value.length != 8) {
+                    alert('Password must be at least 8 characters long.');
+                    passwordField.value = "";
+                }
+            });
+/*
+            confirmPasswordField.addEventListener('blur', () => {
+                if (confirmPasswordField.value !== passwordField.value) {
+                    confirmPasswordField.setCustomValidity('Passwords do not match.');
+                    confirmPasswordField.reportValidity();
+                } 
+            });*/
+            
+        });  
+    
+
+     
+        function validateForm() {
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm_password').value;
+
+            if (password !== confirmPassword) {
+                alert('Passwords do not match.');
+                return false;
+            }
+            return true;
+        }
+            
+    </script>
+</head>
+<body>
+    <h1>Register</h1>
+    <form action="submit_registration" method="post">
+        <table>
+        <tr>
+        <td><label for="username">Username:</label></td>
+        <td><input type="text" id="username" name="username" required></td>
+        </tr>
+
+        <tr>
+        <td><label for="password">Password:</label></td>
+        <td><input type="password" id="password" name="password" required></td>
+        </tr>
+
+        <tr>
+        <td><label for="confirm_password">Confirm Password:</label></td>
+        <td><input type="password" id="confirm_password" name="confirm_password" onblur="validateForm()" required></td>
+        </tr>
+        <tr>
+        <td><label for="email">Email:</label></td>  
+        <td><input type="email" id="email" name="email" required></td>
+        </tr>
+
+        <tr>
+        <td colspan="2" style="text-align: center;"> 
+        <button type="submit">Register</button>
+        </td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>
